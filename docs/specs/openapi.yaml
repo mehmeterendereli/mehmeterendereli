@@ -1,0 +1,225 @@
+openapi: 3.1.0
+info:
+  title: Velia Shorts API (MVP)
+  version: 0.1.0
+  description: Short YAML for main endpoints and schemas
+servers:
+  - url: https://api.velia.com.tr
+paths:
+  /api/auth/stripe/webhook:
+    post:
+      summary: Stripe webhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200': { description: ok }
+  /api/plans/subscribe:
+    post:
+      summary: Subscribe or upgrade plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                planId: { type: string }
+      responses:
+        '200': { description: ok }
+  /api/credits/summary:
+    get:
+      summary: Credit summary
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditSummary'
+  /api/credits/ledger:
+    get:
+      summary: Credit ledger lines
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CreditLedgerLine'
+  /api/projects:
+    post:
+      summary: Create or update a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectUpsert'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+  /api/projects/{id}:
+    get:
+      summary: Get project detail
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+  /api/channels/youtube/connect:
+    post:
+      summary: YouTube OAuth handshake
+      responses:
+        '200': { description: ok }
+  /api/channels/youtube:
+    delete:
+      summary: Disconnect YouTube channel
+      responses:
+        '200': { description: ok }
+  /api/settings/schedule:
+    post:
+      summary: Update schedule preferences
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduleUpsert'
+      responses:
+        '200': { description: ok }
+    get:
+      summary: Get schedule preferences
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schedule'
+  /api/jobs:
+    post:
+      summary: Create manual job
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobCreate'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+  /api/jobs/{id}/approve-storyboard:
+    post:
+      summary: Approve storyboard
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: ok }
+  /api/jobs/{id}/regenerate-scene:
+    post:
+      summary: Regenerate scene
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+        - in: query
+          name: scene
+          required: true
+          schema: { type: integer, minimum: 0 }
+      responses:
+        '200': { description: ok }
+  /api/dashboard/summary:
+    get:
+      summary: Dashboard KPI summary
+      responses:
+        '200': { description: ok }
+  /api/library:
+    get:
+      summary: Produced videos list
+      responses:
+        '200': { description: ok }
+
+components:
+  schemas:
+    CreditSummary:
+      type: object
+      properties:
+        current: { type: integer }
+        rollover: { type: integer }
+    CreditLedgerLine:
+      type: object
+      properties:
+        id: { type: string }
+        type: { type: string }
+        delta: { type: integer }
+        ts: { type: string, format: date-time }
+        idempotencyKey: { type: string }
+    ProjectUpsert:
+      type: object
+      properties:
+        niche: { type: string }
+        langs: { type: array, items: { type: string, enum: [tr, en] } }
+        stylePresetId: { type: string }
+        voicePresetId: { type: string }
+        musicProfile: { type: string }
+        format: { type: string, enum: ['9:16'] }
+        sceneCount: { type: integer, enum: [6] }
+    Project:
+      allOf:
+        - $ref: '#/components/schemas/ProjectUpsert'
+        - type: object
+          properties:
+            id: { type: string }
+            userId: { type: string }
+    ScheduleUpsert:
+      type: object
+      properties:
+        tz: { type: string }
+        slots: { type: array, items: { type: string } }
+        automationEnabled: { type: boolean }
+    Schedule:
+      allOf:
+        - $ref: '#/components/schemas/ScheduleUpsert'
+        - type: object
+          properties:
+            userId: { type: string }
+    JobCreate:
+      type: object
+      properties:
+        projectId: { type: string }
+        sceneCount: { type: integer, enum: [6] }
+        computeMode: { type: string, enum: [economy, balance] }
+        scheduledAt: { type: string, format: date-time }
+    Job:
+      type: object
+      properties:
+        id: { type: string }
+        userId: { type: string }
+        status: { type: string }
+        createdAt: { type: string, format: date-time }
+

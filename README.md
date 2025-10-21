@@ -34,7 +34,7 @@ From **Istanbul, Turkey 🇹🇷**, blending the worlds of **mechanical engineer
 - 🌐 **Website:** [benimlekonus.com](https://benimlekonus.com)  
 - 💼 **LinkedIn:** [linkedin.com/in/mehmeterendereli](https://www.linkedin.com/in/mehmeterendereli)  
 - 🧠 **GitHub:** [@mehmeterendereli](https://github.com/mehmeterendereli)
-- 𝕏 **X:** [@dev_med61](https://x.com/dev_med61)
+- 𝕏 **Twitter:** [@dev_med61](https://x.com/dev_med61)
 ---
 
 ## 🏆 My GitHub Achievements

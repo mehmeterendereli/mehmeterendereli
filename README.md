@@ -85,3 +85,78 @@ ELVUM explores server-authoritative multiplayer architecture, low-level engine s
 Python · TypeScript · JavaScript · C++ · Dart
 React · Next.js · Flutter · Node.js
 PostgreSQL · Firebase · Vercel
+```
+
+### AI & Automation
+
+```txt
+OpenAI API · Claude Code · AI Agents
+Local LLMs · LM Studio · Ollama
+TTS · Computer Vision · Workflow Automation
+```
+
+### Industrial & Mechanical
+
+```txt
+PLC · HMI · Motor Drivers · Thermocouples
+Extrusion Systems · Screw-Barrel Sets
+CNC · CAD/CAM · Machine Design
+```
+
+---
+
+## What I Build
+
+I like building systems that are useful in the real world.
+
+- AI tools that reduce manual work
+- Automation systems that run reliably
+- Industrial machines that solve production problems
+- Software products that can become businesses
+- Local-first tools that reduce dependency on expensive APIs
+- Manufacturing technologies that create physical value
+
+I don't separate software from hardware.  
+If a system has logic, movement, data or production value, I want to make it smarter.
+
+---
+
+## Featured Areas
+
+```txt
+AI Automation        -> video, content, agents, publishing systems
+Industrial R&D       -> extrusion, PLC/HMI, machine automation
+Digital Identity     -> voice AI, digital twin, memory systems
+Local AI Systems     -> local LLMs, offline workflows, cost reduction
+Game Development     -> C/C++, multiplayer architecture, engine systems
+Manufacturing Tech   -> WPC, recycling, pellet-based 3D printing
+```
+
+---
+
+## Philosophy
+
+I care about execution more than ideas.
+
+A good system should be practical, reliable and useful.  
+A good product should solve a real problem.  
+A good machine should work under real production conditions.
+
+My goal is to build products and systems that connect digital intelligence with physical-world value.
+
+---
+
+## Contact
+
+**Website:** [mehmeterendereli.com](https://mehmeterendereli.com)  
+**Product:** [benimlekonus.com](https://benimlekonus.com)  
+**LinkedIn:** [linkedin.com/in/mehmeterendereli](https://linkedin.com/in/mehmeterendereli)  
+**GitHub:** [@mehmeterendereli](https://github.com/mehmeterendereli)  
+**X:** [@dev_med61](https://x.com/dev_med61)  
+**Instagram:** [@benmedo61](https://instagram.com/benmedo61)
+
+---
+
+<p align="left">
+  <strong>Building at the intersection of AI, automation and industrial manufacturing.</strong>
+</p>

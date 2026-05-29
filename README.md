@@ -151,8 +151,7 @@ My goal is to build products and systems that connect digital intelligence with 
 **Website:** [mehmeterendereli.com](https://mehmeterendereli.com)  
 **Product:** [benimlekonus.com](https://benimlekonus.com)  
 **LinkedIn:** [linkedin.com/in/mehmeterendereli](https://linkedin.com/in/mehmeterendereli)  
-**GitHub:** [@mehmeterendereli](https://github.com/mehmeterendereli)  
-**X:** [@dev_med61](https://x.com/dev_med61)  
+**GitHub:** [@mehmeterendereli](https://github.com/mehmeterendereli) 
 **Instagram:** [@benmedo61](https://instagram.com/benmedo61)
 
 ---

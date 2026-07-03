@@ -1,161 +1,77 @@
 # Mehmet Eren Dereli
 
-**AI Automation Builder · Mechanical Designer · Industrial R&D Developer**  
-Istanbul, Türkiye
-
-I build systems where **software, automation, mechanics and artificial intelligence** work together.
-
-My work combines industrial manufacturing experience with modern AI product development: extrusion systems, PLC/HMI automation, AI video engines, digital twin platforms, local news automation, game systems and manufacturing-focused R&D.
-
----
-
-## About
-
-I'm Mehmet Eren Dereli, also known as **Medo**.
-
-I come from a hands-on mechanical manufacturing background and build practical systems across software, automation and machine design. I like projects that can become real products, not just demos.
-
-My focus areas:
-
-- AI-powered automation platforms
-- Industrial machine design and extrusion systems
-- PLC + HMI controlled production systems
-- AI video/content generation tools
-- Digital twin and voice AI products
-- Local news automation and publishing systems
-- Recycled materials, WPC and bio-composite production
-- Large-format pellet/granule-based 3D printing systems
+**Industrial machine builder · Automation & software developer**  
+Istanbul, Türkiye — İkitelli Industrial Zone · [Dereli Plast](https://dereliplast.com.tr)
 
 > Build things that think. Fix things that don't.
 
----
+I design industrial machines, wire their control panels, and write the software that runs them.
 
-## Current Projects
-
-### MMoto
-
-AI-powered short-form video automation platform.
-
-MMoto focuses on automated script generation, voiceover, subtitles, media selection and publishing workflows for YouTube Shorts, TikTok and Instagram Reels.
-
-### TwinFly
-
-Digital twin and voice AI platform.
-
-TwinFly is focused on personal AI identity, voice cloning, memory, long-term digital presence and digital legacy features.
-
-### Asayiş Bey
-
-Local news automation system.
-
-Asayiş Bey monitors public sources, detects breaking incidents, filters duplicate stories and prepares social media-ready posts automatically.
-
-### Dereli Plast R&D
-
-Industrial manufacturing and recycling-focused development.
-
-This includes extrusion systems, screw-barrel sets, WPC/bio-composite production, automation panels and large-format pellet-based 3D printing research.
-
-### ELVUM
-
-Custom C/C++ MMORPG experiment.
-
-ELVUM explores server-authoritative multiplayer architecture, low-level engine systems, gameplay networking and scalable online game foundations.
+Mechatronics-trained (vocational high school + two years of university), then **10+ years on the factory floor** — the rest I learned by building. No engineering diploma on the wall; there are machines running in production instead. I don't separate hardware from software: if it has logic, motion, heat or data, it's my kind of problem.
 
 ---
 
-## Work Areas
+## 🔩 Flagship — DP-FGF-1000
 
-| Area | Focus |
+A **1 m³ large-format, granule-fed (FGF) industrial 3D printer**, designed from scratch:
+
+- **Parametric, code-generated CAD** (Fusion 360 + CadQuery) — the entire machine rebuilds itself from `Baski_X / Baski_Y / Baski_Z` global variables
+- Frame validated with FEA, real vendor components (HIWIN rails, SFU ball screws, fail-safe brakes), rack-and-pinion motion system
+- Prints **directly from plastic granules** instead of filament — built on 30 years of extrusion know-how at Dereli Plast
+
+Filament costs ~5× more than granules. We already make the machines that process the granules — now we're making one that prints with them.
+
+*Private R&D for now — happy to talk about it.*
+
+## 🎮 ELVUM
+
+An MMORPG infrastructure built **from scratch in C++20 — no engine**:
+
+- Server-authoritative architecture: auth + lobby services, request rate limiting
+- PostgreSQL-backed persistence, Argon2id password hashing
+- Win32 + DirectX 11 client, unit-tested shared platform layer
+
+Currently on ice — it turns out 3D content is the real endgame boss, not the netcode. The engineering still stands. *(Private repo; ask me if you want a look.)*
+
+## ⚙️ Also building
+
+- **Asayiş Bey** — autonomous local-news gathering, verification and multi-platform publishing pipeline
+- **Duygusu Health** — bilingual health-platform web foundation (Next.js, CI, lead pipeline)
+- **Aeterna** — a deterministic, ARC-AGI-style symbolic reasoning & cognitive engine experiment
+- **[OpenRelax](https://github.com/mehmeterendereli/openrelax)** — open-source Windows RAM & cache care utility (PowerShell + WinForms)
+
+---
+
+## 🧰 The Workshop
+
+| | |
 |---|---|
-| AI Automation | Agents, video generation, publishing workflows, local AI systems |
-| Industrial Software | PLC/HMI logic, machine automation, production workflows |
-| Mechanical R&D | Extrusion systems, screw-barrel sets, WPC and bio-composites |
-| Digital Products | SaaS tools, digital twin systems, voice AI products |
-| Game Systems | C++, multiplayer architecture, server-authoritative logic |
-| Manufacturing Tech | Recycling, pellet-based 3D printing, industrial prototyping |
+| **Software** | Python · C++20 · TypeScript / Next.js · PostgreSQL |
+| **Machines** | Machine design · extrusion systems · screw-barrel sets · CNC · CAD/CAM (Fusion 360, CadQuery) · FEA |
+| **Automation** | PLC / HMI · motor drives · thermal zone control · plant retrofits |
+| **AI** | Claude Code · agents & workflow automation · local LLMs (Ollama, LM Studio) |
 
----
+## 🏭 Where I Come From
 
-## Tech Stack
+**Dereli Plast** — our family machine shop in İkitelli, Istanbul: 30 years of building single- and twin-screw extruders and granule lines, 500+ projects, exports to 15+ countries.
 
-### Software
+I grew up between the lathes. Now I'm adding the software layer: production monitoring, automation panels, AI-assisted engineering — and machines that print what we used to pelletize.
 
-```txt
-Python · TypeScript · JavaScript · C++ · Dart
-React · Next.js · Flutter · Node.js
-PostgreSQL · Firebase · Vercel
-```
-
-### AI & Automation
-
-```txt
-OpenAI API · Claude Code · AI Agents
-Local LLMs · LM Studio · Ollama
-TTS · Computer Vision · Workflow Automation
-```
-
-### Industrial & Mechanical
-
-```txt
-PLC · HMI · Motor Drivers · Thermocouples
-Extrusion Systems · Screw-Barrel Sets
-CNC · CAD/CAM · Machine Design
-```
-
----
-
-## What I Build
-
-I like building systems that are useful in the real world.
-
-- AI tools that reduce manual work
-- Automation systems that run reliably
-- Industrial machines that solve production problems
-- Software products that can become businesses
-- Local-first tools that reduce dependency on expensive APIs
-- Manufacturing technologies that create physical value
-
-I don't separate software from hardware.  
-If a system has logic, movement, data or production value, I want to make it smarter.
-
----
-
-## Featured Areas
-
-```txt
-AI Automation        -> video, content, agents, publishing systems
-Industrial R&D       -> extrusion, PLC/HMI, machine automation
-Digital Identity     -> voice AI, digital twin, memory systems
-Local AI Systems     -> local LLMs, offline workflows, cost reduction
-Game Development     -> C/C++, multiplayer architecture, engine systems
-Manufacturing Tech   -> WPC, recycling, pellet-based 3D printing
-```
-
----
-
-## Philosophy
+## 💡 Philosophy
 
 I care about execution more than ideas.
 
-A good system should be practical, reliable and useful.  
-A good product should solve a real problem.  
-A good machine should work under real production conditions.
+A good system should survive contact with a real production floor. A good product should solve a problem someone actually pays to have solved. And a good machine should still work on a Monday morning.
 
-My goal is to build products and systems that connect digital intelligence with physical-world value.
-
----
-
-## Contact
+## 📫 Contact
 
 **Website:** [mehmeterendereli.com](https://mehmeterendereli.com)  
-**Product:** [benimlekonus.com](https://benimlekonus.com)  
+**Email:** [info@mehmeterendereli.com](mailto:info@mehmeterendereli.com)  
 **LinkedIn:** [linkedin.com/in/mehmeterendereli](https://linkedin.com/in/mehmeterendereli)  
-**GitHub:** [@mehmeterendereli](https://github.com/mehmeterendereli) 
 **Instagram:** [@benmedo61](https://instagram.com/benmedo61)
 
 ---
 
 <p align="left">
-  <strong>Building at the intersection of AI, automation and industrial manufacturing.</strong>
+  <strong>Building at the intersection of AI, automation and industrial manufacturing — from extruder screws to C++ servers.</strong>
 </p>

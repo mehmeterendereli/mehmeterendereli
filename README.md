@@ -7,7 +7,7 @@ Istanbul, Türkiye — İkitelli Industrial Zone · [Dereli Plast](https://derel
 
 I design industrial machines, wire their control panels, and write the software that runs them.
 
-Mechatronics-trained (vocational high school + two years of university), then **10+ years on the factory floor** — the rest I learned by building. No engineering diploma on the wall; there are machines running in production instead. I don't separate hardware from software: if it has logic, motion, heat or data, it's my kind of problem.
+**10+ years of building things that have to work.** I don't separate hardware from software: if it has logic, motion, heat or data, it's my kind of problem. The rest is need-to-know.
 
 ---
 
@@ -51,11 +51,11 @@ Currently on ice — it turns out 3D content is the real endgame boss, not the n
 | **Automation** | PLC / HMI · motor drives · thermal zone control · plant retrofits |
 | **AI** | Claude Code · agents & workflow automation · local LLMs (Ollama, LM Studio) |
 
-## 🏭 Where I Come From
+## 🏭 Dereli Plast
 
-**Dereli Plast** — our family machine shop in İkitelli, Istanbul: 30 years of building single- and twin-screw extruders and granule lines, 500+ projects, exports to 15+ countries.
+**Dereli Plast** — İkitelli, Istanbul: 30 years of building single- and twin-screw extruders and granule lines, 500+ projects, exports to 15+ countries.
 
-I grew up between the lathes. Now I'm adding the software layer: production monitoring, automation panels, AI-assisted engineering — and machines that print what we used to pelletize.
+I'm adding the software layer: production monitoring, automation panels, AI-assisted engineering — and machines that print what they used to pelletize.
 
 ## 💡 Philosophy
 

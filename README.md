@@ -9,19 +9,22 @@ I design industrial machines, wire their control panels, and write the software 
 
 **10+ years of building things that have to work.** I don't separate hardware from software: if it has logic, motion, heat or data, it's my kind of problem. The rest is need-to-know.
 
+Most of what I build is commercial work for a machine shop and its customers, so most of these repos are private by design — the green squares are real, the source mostly isn't public. What *is* open lives below, and I'm glad to walk through the rest on a call.
+
 ---
 
-## 🔩 Flagship — DP-FGF-1000
+## 🔩 Flagship — VORMETRA G1000
 
 A **1 m³ large-format, granule-fed (FGF) industrial 3D printer**, designed from scratch:
 
 - **Parametric, code-generated CAD** (Fusion 360 + CadQuery) — the entire machine rebuilds itself from `Baski_X / Baski_Y / Baski_Z` global variables
 - Frame validated with FEA, real vendor components (HIWIN rails, SFU ball screws, fail-safe brakes), rack-and-pinion motion system
 - Prints **directly from plastic granules** instead of filament — built on 30 years of extrusion know-how at Dereli Plast
+- **[vormetra-slice](https://github.com/mehmeterendereli/vormetra-slice)** — the pellet/FGF slicer for it, an open-source OrcaSlicer fork (C++, AGPLv3)
 
 Filament costs ~5× more than granules. We already make the machines that process the granules — now we're making one that prints with them.
 
-*Private R&D for now — happy to talk about it.*
+*Design and R&D programme — the machine is not built yet, and I'd rather say so than sell a render. Happy to talk about it.*
 
 ## 🎮 ELVUM
 
@@ -33,7 +36,7 @@ An MMORPG infrastructure built **from scratch in C++20 — no engine**:
 
 Currently on ice — it turns out 3D content is the real endgame boss, not the netcode. The engineering still stands. *(Private repo; ask me if you want a look.)*
 
-## ⚙️ Also building
+## ⚙️ Also on the bench
 
 - **Asayiş Bey** — autonomous local-news gathering, verification and multi-platform publishing pipeline
 - **Duygusu Health** — bilingual health-platform web foundation (Next.js, CI, lead pipeline)

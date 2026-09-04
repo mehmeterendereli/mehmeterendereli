@@ -1,80 +1,97 @@
 # Mehmet Eren Dereli
 
-**Industrial machine builder · Automation & software developer**  
-Istanbul, Türkiye — İkitelli Industrial Zone · [Dereli Plast](https://dereliplast.com.tr)
+**Industrial machine builder · Automation and production-software engineer**  
+İstanbul, Türkiye — İkitelli Industrial Zone
 
-> Build things that think. Fix things that don't.
+[Website](https://www.mehmeterendereli.com/en) · [Open-source portfolio](https://www.mehmeterendereli.com/en/open-source) · [Dereli Plast](https://dereliplast.com.tr) · [LinkedIn](https://linkedin.com/in/mehmeterendereli)
 
-I design industrial machines, wire their control panels, and write the software that runs them.
+> I build systems that have to survive contact with a real production floor.
 
-**10+ years of building things that have to work.** I don't separate hardware from software: if it has logic, motion, heat or data, it's my kind of problem. The rest is need-to-know.
+My work sits between mechanics, motion, heat, control and software. Some projects are public and fully inspectable; customer work and commercial product R&D remain private by design. I keep those two categories separate below.
 
-Most of what I build is commercial work for a machine shop and its customers, so most of these repos are private by design — the green squares are real, the source mostly isn't public. What *is* open lives below, and I'm glad to walk through the rest on a call.
+## Open source — start here
 
----
+| Project | What it demonstrates | Inspectable evidence | Status |
+|---|---|---|---|
+| **[VORMETRA Slice](https://github.com/mehmeterendereli/vormetra-slice)** | Large-format pellet/FGF slicing and programmatic machine workflow | C++ slicer workspace, 1000 × 1000 × 1000 mm G1000 profile, real CLI slicing validation, Python HTTP/MCP control bridge, tests and explicit calibration/TBD notes | **Active flagship** |
+| **[OpenRelax PC Care](https://github.com/mehmeterendereli/openrelax)** | A focused Windows utility with explicit safety boundaries | PowerShell + WinForms, read-only `-SelfTest`, background work, excluded dangerous cleanup targets, tray/scheduling/statistics | **Focused utility** |
 
-## 🔩 Flagship — VORMETRA G1000
+### VORMETRA Slice — system map
 
-A **1 m³ large-format, granule-fed (FGF) industrial 3D printer**, designed from scratch:
+```mermaid
+flowchart LR
+    MODEL[3D model] --> ENGINE[OrcaSlicer-based C++ engine]
+    ENGINE --> PROFILE[VORMETRA G1000 profile]
+    PROFILE --> GCODE[G-code]
+    GCODE --> POST[FGF post-processor]
+    POST --> CNC[LinuxCNC]
 
-- **Parametric, code-generated CAD** (Fusion 360 + CadQuery) — the entire machine rebuilds itself from `Baski_X / Baski_Y / Baski_Z` global variables
-- Frame validated with FEA, real vendor components (HIWIN rails, SFU ball screws, fail-safe brakes), rack-and-pinion motion system
-- Prints **directly from plastic granules** instead of filament — built on 30 years of extrusion know-how at Dereli Plast
-- **[vormetra-slice](https://github.com/mehmeterendereli/vormetra-slice)** — the pellet/FGF slicer for it, an open-source OrcaSlicer fork (C++, AGPLv3)
+    CLIENT[AI agent or client] --> INTERFACE[MCP / HTTP / Python]
+    INTERFACE --> CONTROL[vera-control]
+    CONTROL --> ENGINE
+```
 
-Filament costs ~5× more than granules. We already make the machines that process the granules — now we're making one that prints with them.
+The important part is not the diagram; it is that each boundary is visible in the repository. `vera-control` exposes `/health`, `/profiles`, `/validate` and `/slice`, plus MCP tools and a direct Python API. Heavy slicing jobs are protected by single-process locking instead of silently overloading the workstation.
 
-*Design and R&D programme — the machine is not built yet, and I'd rather say so than sell a render. Happy to talk about it.*
+```bash
+git clone https://github.com/mehmeterendereli/vormetra-slice.git
+cd vormetra-slice/vera-control
+python -m pip install -e ".[dev]"
+python -m pytest -q
+```
 
-## 🎮 ELVUM
+### OpenRelax — safety-first execution path
 
-An MMORPG infrastructure built **from scratch in C++20 — no engine**:
+```mermaid
+flowchart LR
+    SELECT[Select categories] --> SELFTEST[Read-only SelfTest]
+    SELFTEST --> CLEAN[Background cleanup]
+    CLEAN --> REPORT[Report and statistics]
+    GUARD[Safety exclusions] -. blocks .-> CLEAN
+```
 
-- Server-authoritative architecture: auth + lobby services, request rate limiting
-- PostgreSQL-backed persistence, Argon2id password hashing
-- Win32 + DirectX 11 client, unit-tested shared platform layer
+OpenRelax deliberately avoids targets such as Windows Prefetch, diagnostic logs and browser profile/history data. It can be inspected without deleting anything:
 
-Currently on ice — it turns out 3D content is the real endgame boss, not the netcode. The engineering still stands. *(Private repo; ask me if you want a look.)*
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\openrelax.ps1 -SelfTest
+```
 
-## ⚙️ Also on the bench
+## Commercial and private engineering
 
-- **Asayiş Bey** — autonomous local-news gathering, verification and multi-platform publishing pipeline
-- **Duygusu Health** — bilingual health-platform web foundation (Next.js, CI, lead pipeline)
-- **Aeterna** — a deterministic, ARC-AGI-style symbolic reasoning & cognitive engine experiment
-- **[OpenRelax](https://github.com/mehmeterendereli/openrelax)** — open-source Windows RAM & cache care utility (PowerShell + WinForms)
+These are products or active R&D programmes, not open-source claims:
 
----
-
-## 🧰 The Workshop
-
-| | |
+| Work | Current reality |
 |---|---|
-| **Software** | Python · C++20 · TypeScript / Next.js · PostgreSQL |
-| **Machines** | Machine design · extrusion systems · screw-barrel sets · CNC · CAD/CAM (Fusion 360, CadQuery) · FEA |
-| **Automation** | PLC / HMI · motor drives · thermal zone control · plant retrofits |
-| **AI** | Claude Code · agents & workflow automation · local LLMs (Ollama, LM Studio) |
+| **VORMETRA G1000** | 1 m³ pellet-fed industrial 3D-printer R&D: parametric CAD, machine architecture, extrusion and control-chain engineering. The machine is not presented as physically completed. |
+| **Dereli Plast systems** | Single- and twin-screw extrusion machinery, granule lines, screw/barrel work, retrofits and industrial automation built in an operating workshop. |
+| **ELVUM** | Private C++20 server-authoritative MMORPG infrastructure; engineering remains inspectable by walkthrough, but the source is not public. |
+| **Asayiş Bey** | Private autonomous local-news collection, verification and publishing pipeline. |
+| **Duygusu Health** | Private bilingual health-platform foundation with CI and lead workflow. |
 
-## 🏭 Dereli Plast
+## Workshop-to-code stack
 
-**Dereli Plast** — İkitelli, Istanbul: 30 years of building single- and twin-screw extruders and granule lines, 500+ projects, exports to 15+ countries.
+| Domain | Working stack |
+|---|---|
+| **Machines** | Machine design · extrusion systems · screw/barrel sets · CNC · CAD/CAM · FEA |
+| **Automation** | PLC/HMI · motor drives · thermal-zone control · retrofit and commissioning |
+| **Software** | C++20 · Python · TypeScript/Next.js · PostgreSQL · PowerShell |
+| **AI systems** | Agent workflows · MCP tooling · local model integration · deterministic test/evaluation pipelines |
 
-I'm adding the software layer: production monitoring, automation panels, AI-assisted engineering — and machines that print what they used to pelletize.
+## Engineering standard
 
-## 💡 Philosophy
+I do not treat “open source” as a badge. A public project should expose:
 
-I care about execution more than ideas.
+1. **Architecture:** components and boundaries that can be followed.
+2. **A reproducible start:** clone, run and test commands.
+3. **Safety behaviour:** what the system refuses to do and how it fails.
+4. **Honest maturity:** prototype, active development and production evidence must not be blurred together.
 
-A good system should survive contact with a real production floor. A good product should solve a problem someone actually pays to have solved. And a good machine should still work on a Monday morning.
+## Contact
 
-## 📫 Contact
-
-**Website:** [mehmeterendereli.com](https://mehmeterendereli.com)  
+**Website:** [mehmeterendereli.com](https://www.mehmeterendereli.com/en)  
 **Email:** [info@mehmeterendereli.com](mailto:info@mehmeterendereli.com)  
-**LinkedIn:** [linkedin.com/in/mehmeterendereli](https://linkedin.com/in/mehmeterendereli)  
-**Instagram:** [@benmedo61](https://instagram.com/benmedo61)
+**LinkedIn:** [linkedin.com/in/mehmeterendereli](https://linkedin.com/in/mehmeterendereli)
 
 ---
 
-<p align="left">
-  <strong>Building at the intersection of AI, automation and industrial manufacturing — from extruder screws to C++ servers.</strong>
-</p>
+**Mechanical reality first. Software where it creates leverage. Evidence before adjectives.**

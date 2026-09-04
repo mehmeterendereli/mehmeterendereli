@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">Mehmet Eren Dereli public engineering profile</title>
+  <desc id="description">Machinery, industrial automation and source-verifiable software work.</desc>
+  <rect width="1280" height="640" fill="#efece4"/>
+  <rect x="0" y="0" width="20" height="640" fill="#bd4724"/>
+  <g transform="translate(94 94)">
+    <rect width="132" height="132" rx="22" fill="#28251e"/>
+    <text x="66" y="85" text-anchor="middle" fill="#efece4" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700">MED</text>
+  </g>
+  <text x="94" y="310" fill="#28251e" font-family="Segoe UI, Arial, sans-serif" font-size="66" font-weight="700">MEHMET EREN DERELI</text>
+  <text x="98" y="374" fill="#655f54" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="3">MACHINERY  ·  INDUSTRIAL AUTOMATION  ·  SOFTWARE</text>
+  <line x1="98" y1="431" x2="1182" y2="431" stroke="#c6c0b4" stroke-width="2"/>
+  <text x="98" y="496" fill="#28251e" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Public work with explicit evidence boundaries</text>
+  <text x="98" y="548" fill="#655f54" font-family="Segoe UI, Arial, sans-serif" font-size="22">VORMETRA SLICE  •  OPENRELAX  •  MEHMETERENDERELI.COM</text>
+</svg>

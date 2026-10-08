@@ -17,11 +17,15 @@ Public repositories are the verifiable boundary: they show what can be read, run
 
 An OrcaSlicer-based workspace for a design-stage pellet-fed large-format additive-manufacturing system, with a public G1000 profile and the Python `vera-control` bridge.
 
-**Try it:** [install and run the portable checks](https://github.com/mehmeterendereli/vormetra-slice#quick-start) · [inspect the control bridge](https://github.com/mehmeterendereli/vormetra-slice/tree/main/vera-control) · [review the portable validation demo proposal](https://github.com/mehmeterendereli/vormetra-slice/pull/10)
+**Try it:** [install and run the portable checks](https://github.com/mehmeterendereli/vormetra-slice#quick-start) · [inspect the control bridge](https://github.com/mehmeterendereli/vormetra-slice/tree/main/vera-control) · [run the self-contained validation demo](https://github.com/mehmeterendereli/vormetra-slice/blob/main/vera-control/README.md#portable-first-result)
 
 **Current evidence:** portable Python tests and conditional paths for a real slicer binary and an external post-processor. **Boundary:** software/profile verification is not evidence of physical-machine completion, throughput, accuracy or production reliability.
 
 `C++` · `Python` · `OrcaSlicer` · `HTTP / MCP` · `AGPL-3.0 + MIT`
+
+[![Generated VORMETRA demo output: a 200 × 200 × 100 mm STL fits the configured 1000 × 1000 × 1000 mm software envelope. Bounding-box check only, not a print or hardware test.](https://raw.githubusercontent.com/mehmeterendereli/vormetra-slice/main/docs/portable-validation-proof.svg)](https://github.com/mehmeterendereli/vormetra-slice/blob/main/vera-control/README.md#portable-first-result)
+
+<sub>Reproducible example output, not a live status or hardware certification. The demo generates this card from its JSON report; it does not run a slicer or a physical printer.</sub>
 
 ---
 
@@ -29,7 +33,7 @@ An OrcaSlicer-based workspace for a design-stage pellet-fed large-format additiv
 
 A transparent PowerShell/WinForms maintenance utility for Windows, plus an independent CPU-spike recorder that redacts secrets from captured command lines.
 
-**Try it:** [run the read-only self-test](https://github.com/mehmeterendereli/openrelax#quick-start) · [review 2.1 LTS](https://github.com/mehmeterendereli/openrelax/blob/main/CHANGELOG.md) · [review the contributor-safety guide proposal](https://github.com/mehmeterendereli/openrelax/pull/6)
+**Try it:** [run the read-only self-test](https://github.com/mehmeterendereli/openrelax#quick-start) · [review 2.1 LTS](https://github.com/mehmeterendereli/openrelax/blob/main/CHANGELOG.md) · [contribute safely](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md)
 
 **Current evidence:** Windows CI covers the parser, service-state guard and real read-only `-SelfTest`. **Boundary:** Prefetch, diagnostic logs, browser history and profile data are excluded; Windows Update cleanup is administrator-only and disabled by default.
 

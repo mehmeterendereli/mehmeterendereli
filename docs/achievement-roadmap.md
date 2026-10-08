@@ -41,6 +41,30 @@ The OrcaSlicer documentation also notes that **Top shell thickness** can force e
 
 **Publication state:** not posted and not accepted. Posting to a third-party project requires the user's approval. Even if posted, this would be only one candidate answer; an eligible answer must be accepted by the question author before it counts toward Galaxy Brain.
 
+## Second Galaxy Brain answer package
+
+**Target:** [OrcaSlicer Discussion #15807 — “Extreme Stringing with PETG-CF — Cura Perfect”](https://github.com/OrcaSlicer/OrcaSlicer/discussions/15807)
+
+**Observed state:** unanswered, zero replies on 2026-10-08.
+
+**Evidence:** OrcaSlicer's current documentation for [firmware retraction](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/printer_settings/basic%20information/printer_basic_information_advanced.md), [extruder retraction](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/printer_settings/extruder/printer_extruder_retraction.md), [wall-crossing travel](https://github.com/OrcaSlicer/OrcaSlicer/wiki/quality_settings_wall_and_surfaces), and the matching [retraction-tower failure mode](https://github.com/OrcaSlicer/OrcaSlicer/issues/5019).
+
+**Limit:** no 3MF, generated G-code or physical print is attached, so this is a source-backed diagnostic sequence rather than a reproduced fix.
+
+### Ready-to-post answer
+
+The strongest clue is that 1.5–4 mm produced practically identical towers. Before tuning PETG-CF further, verify that the generated G-code is actually changing the retraction amount.
+
+1. In **Printer Settings → Basic information → Advanced**, check **Use firmware retraction**. Orca's documentation says this replaces slicer-controlled E moves with `G10`/`G11`, leaving the firmware to choose the distance. Disable it for the Orca retraction tower, reslice, and inspect the G-code. A previously reported matching failure mode produced `G10`/`G11` throughout the tower, so every section used the same firmware value instead of the requested 1.5–4 mm range.
+2. Check **Material Setting Overrides** for the selected PETG-CF profile. Orca explicitly allows material retraction settings to override the printer defaults; disable the override for this test or make sure it contains the range you intend to test.
+3. Run one controlled baseline with **Wipe while retracting** disabled. The current split settings do not add extra retraction: “before”, “during”, and “after” are percentages of the same total and are clamped to 100%. Re-enable wipe only after a plain retraction tower shows a real gradient.
+4. `M82` versus `M83` alone is not evidence of a stringing cause; those commands select absolute versus relative extrusion coordinates. Compare the actual retract/unretract delta around the same travel move instead.
+5. For the Cura-combing-like part, enable **Avoid crossing walls** and set a finite **Max detour length** after retraction is proven. Orca documents this specifically as a way to reduce wall crossings and PETG/TPU stringing; it is not compatible with Timelapse mode.
+
+If all tower sections still look alike after firmware retraction and material overrides are excluded, attach the 3MF plus a short G-code excerpt covering one retract → travel → prime sequence. That will distinguish a profile/override problem from travel-path or firmware behavior without guessing at more temperatures or pressure-advance values.
+
+**Publication state:** not posted and not accepted. Together, the two prepared answers cover the community-observed base threshold only if each is posted in an eligible repository Discussion and later accepted by its question author; preparation alone does not count.
+
 ## Threshold references
 
 - [GitHub Docs — About your profile](https://docs.github.com/articles/about-your-profile)

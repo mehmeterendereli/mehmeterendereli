@@ -12,7 +12,7 @@ I work across mechanics, motion, heat, control and software. Public repositories
 | Project | What is public today | Verification | Status and licence |
 |---|---|---|---|
 | **[VORMETRA Slice](https://github.com/mehmeterendereli/vormetra-slice)** | OrcaSlicer-based C++ workspace, G1000 machine profile and the Python `vera-control` bridge | Portable Python tests plus conditional real-slicer and external post-processor paths | **Active flagship** · engine/profile AGPL-3.0 · `vera-control` MIT |
-| **[OpenRelax PC Care](https://github.com/mehmeterendereli/openrelax)** | Source-distributed PowerShell/WinForms Windows maintenance utility | Windows parser, service-state guard and real read-only `-SelfTest` workflow | **Focused utility** · MIT · no installer or binary release |
+| **[OpenRelax PC Care](https://github.com/mehmeterendereli/openrelax)** | PowerShell/WinForms Windows maintenance utility plus an independent CPU-spike recorder | Windows CI verifies the parser, service-state guard and read-only `-SelfTest`; local stress suites cover the engine, GUI and spike trap | **2.1 LTS** · MIT · source distribution |
 
 ### VORMETRA Slice
 
@@ -44,7 +44,7 @@ flowchart LR
     SELFTEST[Read-only SelfTest] -. inspects .-> GUARDS
 ```
 
-OpenRelax excludes Windows Prefetch, diagnostic logs, browser history and profile data. Windows Update cleanup is administrator-only and disabled by default. Evaluate the real scan path without deleting files:
+[OpenRelax 2.1 LTS](https://github.com/mehmeterendereli/openrelax/blob/main/CHANGELOG.md) excludes Windows Prefetch, diagnostic logs, browser history and profile data. Windows Update cleanup is administrator-only and disabled by default. Its separate `fotokapan.ps1` task records CPU spikes outside the GUI and masks secrets in captured command lines. Evaluate the real scan path without deleting files:
 
 ```powershell
 git clone https://github.com/mehmeterendereli/openrelax.git

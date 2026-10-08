@@ -1,86 +1,58 @@
-# Mehmet Eren Dereli
+![Mehmet Eren Dereli — machinery, industrial automation and source-verifiable software](./assets/profile-hero.svg)
 
-**Machinery · Industrial automation · Production software**
-İstanbul, Türkiye
+<p align="center">
+  <a href="https://www.mehmeterendereli.com/en">Website</a> ·
+  <a href="https://www.mehmeterendereli.com/en/open-source">Open-source portfolio</a> ·
+  <a href="https://www.linkedin.com/in/mehmeterendereli">LinkedIn</a> ·
+  <a href="mailto:info@mehmeterendereli.com">Email</a>
+</p>
 
-[Website](https://www.mehmeterendereli.com/en) · [Open-source portfolio](https://www.mehmeterendereli.com/en/open-source) · [LinkedIn](https://linkedin.com/in/mehmeterendereli)
+I build inspectable systems across mechanics, motion, heat, control and software. My public work focuses on large-format additive manufacturing, deterministic automation and privacy-first, on-device AI product systems.
 
-I work across mechanics, motion, heat, control and software. Public repositories contain the projects that can be inspected from source; customer work and commercial product development remain private.
+Public repositories are the verifiable boundary: they show what can be read, run and tested today. Customer work, private source, internal architecture and unreleased commercial products remain private.
 
-## Open source — start here
+## Start with a working path
 
-| Project | What is public today | Verification | Status and licence |
-|---|---|---|---|
-| **[VORMETRA Slice](https://github.com/mehmeterendereli/vormetra-slice)** | OrcaSlicer-based C++ workspace, G1000 machine profile and the Python `vera-control` bridge | Portable Python tests plus conditional real-slicer and external post-processor paths | **Active flagship** · engine/profile AGPL-3.0 · `vera-control` MIT |
-| **[OpenRelax PC Care](https://github.com/mehmeterendereli/openrelax)** | Source-distributed PowerShell/WinForms Windows maintenance utility | Windows parser, service-state guard and real read-only `-SelfTest` workflow | **Focused utility** · MIT · no installer or binary release |
+### [VORMETRA Slice](https://github.com/mehmeterendereli/vormetra-slice)
 
-### VORMETRA Slice
+An OrcaSlicer-based workspace for a design-stage pellet-fed large-format additive-manufacturing system, with a public G1000 profile and the Python `vera-control` bridge.
 
-```mermaid
-flowchart LR
-    MODEL[3D model] --> ENGINE[OrcaSlicer-based engine]
-    PROFILE[G1000 profile] --> ENGINE
-    ENGINE --> GCODE[G-code]
-    CLIENT[HTTP, MCP or Python client] --> CONTROL[vera-control]
-    CONTROL --> ENGINE
-```
+**Try it:** [install and run the portable checks](https://github.com/mehmeterendereli/vormetra-slice#quick-start) · [inspect the control bridge](https://github.com/mehmeterendereli/vormetra-slice/tree/main/vera-control) · [review the portable validation demo proposal](https://github.com/mehmeterendereli/vormetra-slice/pull/10)
 
-The repository separates four evidence levels: portable Python verification, real slicer-binary tests, optional external LinuxCNC/post-processor integration, and physical-machine validation. A pass in one level is not presented as proof of another.
+**Current evidence:** portable Python tests and conditional paths for a real slicer binary and an external post-processor. **Boundary:** software/profile verification is not evidence of physical-machine completion, throughput, accuracy or production reliability.
 
-```bash
-git clone https://github.com/mehmeterendereli/vormetra-slice.git
-cd vormetra-slice/vera-control
-python -m pip install -e ".[dev]"
-python -m pytest -q
-```
+`C++` · `Python` · `OrcaSlicer` · `HTTP / MCP` · `AGPL-3.0 + MIT`
 
-### OpenRelax
+---
 
-```mermaid
-flowchart LR
-    SELECT[Selected categories] --> GUARDS[Privilege and path guards]
-    GUARDS --> CLEAN[Background cleanup]
-    CLEAN --> REPORT[Result and aggregate statistics]
-    SELFTEST[Read-only SelfTest] -. inspects .-> GUARDS
-```
+### [OpenRelax PC Care](https://github.com/mehmeterendereli/openrelax)
 
-OpenRelax excludes Windows Prefetch, diagnostic logs, browser history and profile data. Windows Update cleanup is administrator-only and disabled by default. Evaluate the real scan path without deleting files:
+A transparent PowerShell/WinForms maintenance utility for Windows, plus an independent CPU-spike recorder that redacts secrets from captured command lines.
 
-```powershell
-git clone https://github.com/mehmeterendereli/openrelax.git
-cd openrelax
-powershell -NoProfile -ExecutionPolicy Bypass -File .\openrelax.ps1 -SelfTest
-```
+**Try it:** [run the read-only self-test](https://github.com/mehmeterendereli/openrelax#quick-start) · [review 2.1 LTS](https://github.com/mehmeterendereli/openrelax/blob/main/CHANGELOG.md) · [review the contributor-safety guide proposal](https://github.com/mehmeterendereli/openrelax/pull/6)
 
-## Public and private boundary
+**Current evidence:** Windows CI covers the parser, service-state guard and real read-only `-SelfTest`. **Boundary:** Prefetch, diagnostic logs, browser history and profile data are excluded; Windows Update cleanup is administrator-only and disabled by default.
 
-| Work | Public evidence boundary |
-|---|---|
-| **VORMETRA G1000** | Design-stage pellet-fed large-format additive-manufacturing programme. The public slicer repository documents software and profile work; it does not prove physical completion, commissioning, throughput, accuracy or production reliability. |
-| **Customer and commercial work** | Publicly described only at service or case-study level on the website. Customer data, private source, repository history and internal architecture are not published here. |
+`PowerShell 5.1` · `WinForms` · `Windows CI` · `MIT`
 
-## Working areas
+## What I am building toward
 
-| Domain | Focus |
-|---|---|
-| **Machinery** | Custom machinery, extrusion systems, screw/barrel work, CAD/CAM and production-oriented design |
-| **Automation** | PLC/HMI, motor drives, thermal-zone control, retrofit and commissioning |
-| **Software** | C++20, Python, TypeScript/Next.js, PostgreSQL and PowerShell |
-| **Interfaces** | Deterministic automation, HTTP APIs, MCP tools and testable decision-support workflows |
+- **Machines:** custom machinery, extrusion systems, CAD/CAM and production-oriented mechanical design.
+- **Automation:** PLC/HMI, motor drives, thermal-zone control, retrofit and commissioning.
+- **Software:** deterministic control interfaces, testable Python/C++ systems and source-verifiable workflows.
+- **Private AI:** device-side, privacy-first product experiences; only publicly released evidence is described here.
 
-## Public engineering standard
+## Evidence before claims
 
-A public project should make four things easy to verify:
+Every public project should make four things easy to inspect:
 
-1. **Architecture:** components and boundaries can be followed from source.
-2. **Reproduction:** clone, run and test commands match the current tree.
-3. **Safety:** refusal and failure behavior is documented alongside the happy path.
-4. **Maturity:** design targets, software verification and physical results are not blurred together.
+1. **Architecture** — components and trust boundaries are traceable from source.
+2. **Reproduction** — clone, run and test commands match the current tree.
+3. **Safety** — refusal and failure behavior sit beside the happy path.
+4. **Maturity** — design targets, software checks and physical results are kept distinct.
 
-## Contact
+## Work together
 
-**Website:** [mehmeterendereli.com](https://www.mehmeterendereli.com/en)
+For an engineering project, a reproducible bug report or an open-source contribution, start with [email](mailto:info@mehmeterendereli.com) or [LinkedIn](https://www.linkedin.com/in/mehmeterendereli). Repository-specific fixes are best opened against the relevant project so the discussion stays connected to source and tests.
 
-**Email:** [info@mehmeterendereli.com](mailto:info@mehmeterendereli.com)
-
-**LinkedIn:** [linkedin.com/in/mehmeterendereli](https://linkedin.com/in/mehmeterendereli)
+<sub>Based in İstanbul, Türkiye · Public engineering profile maintained with explicit evidence boundaries.</sub>

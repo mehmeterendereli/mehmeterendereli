@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title description">
+  <title id="title">Mehmet Eren Dereli public engineering profile</title>
+  <desc id="description">A restrained cream, charcoal and orange banner for machinery, industrial automation and source-verifiable software.</desc>
+  <rect width="1280" height="400" rx="28" fill="#efece4"/>
+  <rect width="18" height="400" rx="9" fill="#bd4724"/>
+  <g fill="none" stroke="#c6c0b4" stroke-width="2" opacity="0.9">
+    <path d="M900 72h230l82 82v174H900z"/>
+    <path d="M932 112h172l68 68v108H932z"/>
+    <circle cx="1004" cy="201" r="58"/>
+    <circle cx="1004" cy="201" r="18"/>
+    <path d="M1062 201h110M1004 143V88M1004 259v45M946 201h-78"/>
+    <path d="M1128 86v50h50M932 288l-42 40M1172 288l40 40"/>
+  </g>
+  <g fill="#bd4724">
+    <circle cx="868" cy="201" r="7"/>
+    <circle cx="1004" cy="88" r="7"/>
+    <circle cx="1172" cy="201" r="7"/>
+  </g>
+  <g transform="translate(76 68)">
+    <rect width="104" height="104" rx="20" fill="#28251e"/>
+    <text x="52" y="66" text-anchor="middle" fill="#efece4" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">MED</text>
+  </g>
+  <text x="76" y="231" fill="#28251e" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700">MEHMET EREN DERELI</text>
+  <text x="79" y="281" fill="#655f54" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="2.7">MACHINERY · INDUSTRIAL AUTOMATION · SOFTWARE</text>
+  <line x1="79" y1="316" x2="724" y2="316" stroke="#c6c0b4" stroke-width="2"/>
+  <text x="79" y="354" fill="#28251e" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Build it. Expose the evidence. Keep the boundary clear.</text>
+</svg>

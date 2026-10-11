@@ -25,9 +25,9 @@ Public repositories show what can be read, run and tested today. Customer work, 
 
 **A record after the CPU spike.** Fotokapan records process CPU shares and event times without command arguments. It is a high-CPU recorder, not a promise to diagnose every freeze; process names and timestamps are still diagnostic information.
 
-**Evidence, not speed-up claims:** [Windows checks and review artifacts](https://github.com/mehmeterendereli/openrelax/actions/workflows/verify.yml) cover isolated safety, scan/cleanup, native-control and renderer paths. Source artifacts are unsigned Preview snapshots, not stable releases or LTS commitments. Elevated system integration and broader desktop configurations still need [release validation](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md#source-release-checklist).
+**Evidence, not speed-up claims:** [eight verified TR/EN interface captures](https://github.com/mehmeterendereli/openrelax/tree/main/docs/screenshots) and [Windows checks](https://github.com/mehmeterendereli/openrelax/actions/workflows/verify.yml) cover the native UI, isolated safety, scan/cleanup and renderer paths. A disposable hosted Windows runner also proves real Fotokapan SYSTEM-task installation, protected ACLs through a separate standard-user logon, same-source upgrade and uninstall. Source artifacts remain unsigned Preview snapshots—not stable releases or LTS commitments—and real Windows Update restoration, reboot, RDP, Narrator and monitor-DPI scenarios remain release gates.
 
-[Report a reproducible issue](https://github.com/mehmeterendereli/openrelax/issues) · [Contribute](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md) · [Security reporting](https://github.com/mehmeterendereli/openrelax/blob/main/SECURITY.md)
+[Report a reproducible issue](https://github.com/mehmeterendereli/openrelax/issues/new) · [Contribute](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md) · [Security reporting](https://github.com/mehmeterendereli/openrelax/blob/main/SECURITY.md)
 
 ---
 

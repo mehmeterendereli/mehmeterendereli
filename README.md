@@ -7,37 +7,41 @@
   <a href="mailto:info@mehmeterendereli.com">Email</a>
 </p>
 
-I build inspectable systems across mechanics, motion, heat, control and software. My public work focuses on large-format additive manufacturing, deterministic automation and privacy-first, on-device AI product systems.
+I build inspectable systems across mechanics, motion, heat, control and software. My public work connects practical Windows tools, large-format additive manufacturing and deterministic automation. My product interests also include privacy-first, on-device AI.
 
-Public repositories are the verifiable boundary: they show what can be read, run and tested today. Customer work, private source, internal architecture and unreleased commercial products remain private.
+Public repositories show what can be read, run and tested today. Customer work, private source, internal architecture and unreleased commercial products remain private.
 
-## Start with a working path
+## Featured · OpenRelax PC Care
 
-### [VORMETRA Slice](https://github.com/mehmeterendereli/vormetra-slice)
+### Review maintenance. Understand CPU spikes.
 
-An OrcaSlicer-based workspace for a design-stage pellet-fed large-format additive-manufacturing system, with a public G1000 profile and the Python `vera-control` bridge.
+[OpenRelax](https://github.com/mehmeterendereli/openrelax) combines a Windows maintenance interface with **Fotokapan**, an independent recorder for sustained high-CPU episodes. Start with a read-only check, inspect the selected operations, and confirm before interactive cleanup.
 
-**Try it:** [install and run the portable checks](https://github.com/mehmeterendereli/vormetra-slice#quick-start) · [inspect the control bridge](https://github.com/mehmeterendereli/vormetra-slice/tree/main/vera-control) · [run the self-contained validation demo](https://github.com/mehmeterendereli/vormetra-slice/blob/main/vera-control/README.md#portable-first-result)
+**2.1 Preview · Windows PowerShell 5.1 · TR / EN · MIT · source-only**
 
-**Current evidence:** portable Python tests and conditional paths for a real slicer binary and an external post-processor. **Boundary:** software/profile verification is not evidence of physical-machine completion, throughput, accuracy or production reliability.
+**Start here:** [Download source ZIP](https://github.com/mehmeterendereli/openrelax/archive/refs/heads/main.zip) · [Run from source](https://github.com/mehmeterendereli/openrelax#run-from-source) · [Explore Fotokapan](https://github.com/mehmeterendereli/openrelax#fotokapan-cpu-spike-recorder)
+
+**Maintenance you can inspect.** Corrupt settings stop scheduled cleanup. Recycle Bin, system-cache categories, RAM trimming and DNS flushing are opt-in. The read-only `-SelfTest` is separate from maintenance.
+
+**A record after the CPU spike.** Fotokapan records process CPU shares and event times without command arguments. It is a high-CPU recorder, not a promise to diagnose every freeze; process names and timestamps are still diagnostic information.
+
+**Evidence, not speed-up claims:** [Windows checks and review artifacts](https://github.com/mehmeterendereli/openrelax/actions/workflows/verify.yml) cover isolated safety, scan/cleanup, native-control and renderer paths. Source artifacts are unsigned Preview snapshots, not stable releases or LTS commitments. Elevated system integration and broader desktop configurations still need [release validation](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md#source-release-checklist).
+
+[Report a reproducible issue](https://github.com/mehmeterendereli/openrelax/issues) · [Contribute](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md) · [Security reporting](https://github.com/mehmeterendereli/openrelax/blob/main/SECURITY.md)
+
+---
+
+## Engineering · VORMETRA Slice
+
+[An OrcaSlicer-based workspace](https://github.com/mehmeterendereli/vormetra-slice) for a design-stage pellet-fed large-format additive-manufacturing system, with a public G1000 profile and the Python `vera-control` bridge.
+
+**Try it:** [Install and run the portable checks](https://github.com/mehmeterendereli/vormetra-slice#quick-start) · [Inspect the control bridge](https://github.com/mehmeterendereli/vormetra-slice/tree/main/vera-control) · [Run the self-contained validation demo](https://github.com/mehmeterendereli/vormetra-slice/blob/main/vera-control/README.md#portable-first-result)
 
 `C++` · `Python` · `OrcaSlicer` · `HTTP / MCP` · `AGPL-3.0 + MIT`
 
 [![Generated VORMETRA demo output: a 200 × 200 × 100 mm STL fits the configured 1000 × 1000 × 1000 mm software envelope. Bounding-box check only, not a print or hardware test.](https://raw.githubusercontent.com/mehmeterendereli/vormetra-slice/main/docs/portable-validation-proof.svg)](https://github.com/mehmeterendereli/vormetra-slice/blob/main/vera-control/README.md#portable-first-result)
 
-<sub>Reproducible example output, not a live status or hardware certification. The demo generates this card from its JSON report; it does not run a slicer or a physical printer.</sub>
-
----
-
-### [OpenRelax PC Care](https://github.com/mehmeterendereli/openrelax)
-
-A transparent PowerShell/WinForms maintenance utility for Windows, plus an independent CPU-spike recorder that redacts secrets from captured command lines.
-
-**Try it:** [run the read-only self-test](https://github.com/mehmeterendereli/openrelax#quick-start) · [review 2.1 LTS](https://github.com/mehmeterendereli/openrelax/blob/main/CHANGELOG.md) · [contribute safely](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md)
-
-**Current evidence:** Windows CI covers the parser, service-state guard and real read-only `-SelfTest`. **Boundary:** Prefetch, diagnostic logs, browser history and profile data are excluded; Windows Update cleanup is administrator-only and disabled by default.
-
-`PowerShell 5.1` · `WinForms` · `Windows CI` · `MIT`
+<sub>Reproducible example output, not a live status or hardware certification. The demo generates this card from its JSON report; it does not run a slicer or a physical printer. Physical-machine completion, throughput, accuracy and production reliability are not established by this check.</sub>
 
 ## What I am building toward
 

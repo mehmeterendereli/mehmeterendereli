@@ -17,15 +17,15 @@ Public repositories show what can be read, run and tested today. Customer work, 
 
 [OpenRelax](https://github.com/mehmeterendereli/openrelax) combines a Windows maintenance interface with **Fotokapan**, an independent recorder for sustained high-CPU episodes. Start with a read-only check, inspect the selected operations, and confirm before interactive cleanup.
 
-**2.1 Preview · Windows PowerShell 5.1 · TR / EN · MIT · source-only**
+**2.3.0 source release · Windows PowerShell 5.1 · TR / EN · MIT · source-only**
 
-**Start here:** [Download source ZIP](https://github.com/mehmeterendereli/openrelax/archive/refs/heads/main.zip) · [Run from source](https://github.com/mehmeterendereli/openrelax#run-from-source) · [Explore Fotokapan](https://github.com/mehmeterendereli/openrelax#fotokapan-cpu-spike-recorder)
+**Start here:** [Open the 2.3.0 release](https://github.com/mehmeterendereli/openrelax/releases/tag/v2.3.0) · [Download pinned source ZIP](https://github.com/mehmeterendereli/openrelax/archive/refs/tags/v2.3.0.zip) · [Run from source](https://github.com/mehmeterendereli/openrelax#run-from-source) · [Explore Fotokapan](https://github.com/mehmeterendereli/openrelax#fotokapan-cpu-spike-recorder)
 
-**Maintenance you can inspect.** Corrupt settings stop scheduled cleanup. Recycle Bin, system-cache categories, RAM trimming and DNS flushing are opt-in. The read-only `-SelfTest` is separate from maintenance.
+**Maintenance you can inspect.** Corrupt settings stop scheduled cleanup. Recycle Bin, system-cache categories, developer caches, RAM trimming and DNS flushing are opt-in. Cleaning reports live file/byte progress; the read-only `-SelfTest` remains separate from maintenance.
 
-**A record after the CPU spike.** Fotokapan records process CPU shares and event times without command arguments. It is a high-CPU recorder, not a promise to diagnose every freeze; process names and timestamps are still diagnostic information.
+**A record after the CPU spike.** Fotokapan turns the last seven days into categorized findings, keeps a full records page, exports a Markdown report and can announce new spikes. Command-line recording is opt-in, masked and off by default; masking cannot guarantee removal of every secret. It is a high-CPU recorder, not a promise to diagnose every freeze.
 
-**Evidence, not speed-up claims:** [eight verified TR/EN interface captures](https://github.com/mehmeterendereli/openrelax/tree/main/docs/screenshots) and [Windows checks](https://github.com/mehmeterendereli/openrelax/actions/workflows/verify.yml) cover the native UI, isolated safety, scan/cleanup and renderer paths. A disposable hosted Windows runner also proves real Fotokapan SYSTEM-task installation, protected ACLs through a separate standard-user logon, same-source upgrade and uninstall. Source artifacts remain unsigned Preview snapshots—not stable releases or LTS commitments—and real Windows Update restoration, reboot, RDP, Narrator and monitor-DPI scenarios remain release gates.
+**Evidence, not speed-up claims:** [eight verified TR/EN interface captures](https://github.com/mehmeterendereli/openrelax/tree/main/docs/screenshots) and [the 2.3.0 Windows checks](https://github.com/mehmeterendereli/openrelax/actions/runs/39055301873) cover the native UI, isolated safety, scan/cleanup, engine/unit contracts and renderer paths. A disposable hosted Windows runner also proves real Fotokapan SYSTEM-task installation, protected ACLs through a separate standard-user logon, same-source upgrade and uninstall. The GitHub release contains unsigned source—not a signed binary, stable binary distribution or LTS commitment—and real Windows Update restoration, reboot, RDP, Narrator and monitor-DPI scenarios remain release gates.
 
 [Report a reproducible issue](https://github.com/mehmeterendereli/openrelax/issues/new) · [Contribute](https://github.com/mehmeterendereli/openrelax/blob/main/CONTRIBUTING.md) · [Security reporting](https://github.com/mehmeterendereli/openrelax/blob/main/SECURITY.md)
 
